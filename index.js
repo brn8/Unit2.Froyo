@@ -15,10 +15,12 @@ const froyoFlavors = {};
 
 function listOfOrders(arr) {
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] in froyoFlavors) {
-      froyoFlavors[arr[i]] = froyoFlavors[arr[i]] + 1;
-    } else {
-      froyoFlavors[arr[i]] = 1;
+    if (arr[i] !== "") {
+      if (arr[i] in froyoFlavors) {
+        froyoFlavors[arr[i]] = froyoFlavors[arr[i]] + 1;
+      } else {
+        froyoFlavors[arr[i]] = 1;
+      }
     }
   }
   return froyoFlavors;
