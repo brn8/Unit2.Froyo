@@ -7,7 +7,6 @@ const arr = input.split(",");
 for (let i in arr) {
   arr[i] = arr[i].trim().toLowerCase();
 }
-console.log(arr);
 //An object is used to keep count of how many orders there are of each flavor.
 
 const froyoFlavors = {};
