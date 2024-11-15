@@ -1,4 +1,38 @@
-//The user is prompted for froyo flavors upon entering the website.
+const input = prompt(
+  "Please enter your favorite froyo flavors followed by comma for example: vanilla,vanilla,vanilla,strawberry,coffee,coffee"
+);
+
+const stringToArray = (str) => {
+  return str.split(",");
+};
+// remove extra space and return non-empty array
+const removeExtraSpace = (arr) => {
+  const newArray = [];
+  for (const i in arr) {
+    if (arr[i].trim() !== "") {
+      newArray.push(arr[i].trim());
+    }
+  }
+  return newArray;
+};
+const froyoFlavors = (arr) => {
+  const flavors = {};
+  for (const flavor in arr) {
+    if (arr[flavor] in flavors) {
+      flavors[arr[flavor]] += 1;
+    } else {
+      flavors[arr[flavor]] = 1;
+    }
+  }
+  return flavors;
+};
+
+const arr = stringToArray(input);
+const properArr = removeExtraSpace(arr);
+
+const objOfFroyoFlavors = froyoFlavors(properArr);
+console.table(objOfFroyoFlavors);
+/*//The user is prompted for froyo flavors upon entering the website.
 const input = prompt(
   "Please enter your favorite froyo flavors followed by comma for example: vanilla,vanilla,vanilla,strawberry,coffee,coffee "
 );
@@ -26,3 +60,4 @@ function listOfOrders(arr) {
 }
 
 console.table(listOfOrders(arr));
+*/
